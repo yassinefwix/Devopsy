@@ -32,8 +32,8 @@ jobs:
           port: 22
           script: |
             apt-get update
-            sudo apt install nodejs
-            sudo apt install npm
+            sudo apt install -q -y --force-yes nodejs
+            sudo apt install -q -y --force-yes npm
             git clone "https://github.com/yassinefwix/Devopsy.git" 2> /dev/null || (cd Devopsy ; git pull)
             cd Devopsy/mon-app
             npm run build
