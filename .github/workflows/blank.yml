@@ -30,7 +30,7 @@ jobs:
           username: ubuntu
           key: ${{ secrets.GIT_SECRETY }}
           port: 22
-          script: 
+          script: |
             cd webapp 
             git clone "https://github.com/yassinefwix/Devopsy.git" 
             npm run build
