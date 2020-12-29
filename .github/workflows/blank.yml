@@ -36,5 +36,6 @@ jobs:
             sudo apt install -q -y --force-yes npm
             git clone "https://github.com/yassinefwix/Devopsy.git" 2> /dev/null || (cd Devopsy ; git pull)
             cd Devopsy/mon-app
+            npm install
             npm run build
-            npm run serve
+            npm run start
