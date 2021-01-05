@@ -34,8 +34,12 @@ jobs:
             apt-get update
             sudo apt install -q -y --force-yes nodejs
             sudo apt install -q -y --force-yes npm
+            sudo apt install -q -y --force-yes nginx
+            npm install -g serve
             git clone "https://github.com/yassinefwix/Devopsy.git" 2> /dev/null || (cd Devopsy ; git pull)
             cd Devopsy/mon-app
             npm install
             npm run build
-            npm run start
+            cp Devopsy/mon-app/nginx/default /etc/nginx/sites-enabled/default
+            cp -r /root/Devopsy/mon-app/build/ /var/www/html/
+            service nginx restart
